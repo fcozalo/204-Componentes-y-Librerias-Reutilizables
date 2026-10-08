@@ -443,18 +443,57 @@ reutilizado desde otros proyectos.
 
 ---
 
-# Conclusión
+# Evidencias de funcionamiento
 
-La actividad permitió comprender la diferencia entre un componente, un
-paquete y una librería.
+A continuación se muestran las pruebas de funcionamiento de los componentes
+reutilizables desarrollados en Python/Tkinter y Java/JavaFX.
 
-Los componentes visuales permiten crear elementos reutilizables que
-interactúan directamente con el usuario, mientras que los componentes no
-visuales proporcionan funciones que pueden utilizarse internamente desde
-diferentes programas.
+---
 
-Mediante Python se creó un paquete local reutilizable, mientras que en
-Java se utilizó Maven para generar una librería en formato JAR.
+## Evidencias de Python / Tkinter
 
-De esta manera, los mismos componentes pueden utilizarse desde distintas
-aplicaciones sin necesidad de volver a desarrollar su funcionalidad.
+### Validación de correo electrónico
+
+El componente `ValidatedEntry` cambia su estado visual dependiendo de si
+el contenido ingresado cumple con el patrón establecido.
+
+#### Campo vacío
+
+El campo permanece sin contenido y el estado se muestra como inválido.
+
+<p align="center">
+  <img src="evidencias/e1.png" width="650">
+</p>
+
+---
+
+#### Correo electrónico válido
+
+Cuando se introduce una dirección de correo correcta, el componente cambia
+a color verde y muestra el estado como válido.
+
+<p align="center">
+  <img src="evidencias/e2.png" width="650">
+</p>
+
+---
+
+#### Correo electrónico inválido
+
+Cuando el texto no cumple con el formato de correo electrónico, el campo
+cambia a color rojo y el estado se muestra como inválido.
+
+<p align="center">
+  <img src="evidencias/e3.png" width="650">
+</p>
+
+---
+
+### Uso conjunto de ValidatedEntry y Slugifier
+
+En esta evidencia se utilizan los dos componentes desarrollados.
+
+El correo:
+
+```text
+usuario@gmail.com
