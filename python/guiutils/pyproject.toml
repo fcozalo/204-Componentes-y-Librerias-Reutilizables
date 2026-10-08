@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "guiutils"
+version = "1.0.0"
+description = "Componentes reutilizables para interfaces gráficas con Tkinter"
+requires-python = ">=3.10"
+
+authors = [
+    {name = "Los tres mosqueteros"}
+]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["guiutils*"]

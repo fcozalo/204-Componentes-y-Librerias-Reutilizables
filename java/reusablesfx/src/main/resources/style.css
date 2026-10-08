@@ -1,0 +1,14 @@
+.validated-text {
+    -fx-background-color: white;
+    -fx-border-color: #cccccc;
+    -fx-border-radius: 4px;
+}
+
+.validated-text:focused {
+    -fx-border-color: #2563eb;
+}
+
+.validated-text:invalid {
+    -fx-background-color: #ffdddd;
+    -fx-border-color: #dc2626;
+}
