@@ -445,32 +445,118 @@ reutilizado desde otros proyectos.
 
 # Evidencias de funcionamiento
 
-A continuación se presentan evidencias del funcionamiento de los
-componentes reutilizables desarrollados tanto en Python/Tkinter como
-en Java/JavaFX.
+A continuación se muestran las evidencias de funcionamiento de los componentes desarrollados en Python/Tkinter y Java/JavaFX.
 
 ---
 
-## Evidencias de Python / Tkinter
+## Evidencia 1 - Python/Tkinter: estado inicial
 
-### 1. Estado inicial de la aplicación
+La aplicación inicia mostrando el componente `ValidatedEntry` para ingresar un correo electrónico y un segundo campo para generar slugs.
 
-La aplicación inicia con el campo de correo electrónico vacío y con
-el estado marcado como inválido.
+Cuando el campo de correo está vacío, el estado se muestra como inválido.
 
-<p align="center">
-  <img src="evidencias/e1.png" width="650">
-</p>
+![Evidencia 1](evidencias/e1.png)
 
 ---
 
-### 2. Validación de correo correcto
+## Evidencia 2 - Python/Tkinter: correo válido
 
-Al introducir un correo electrónico con un formato válido, el componente
-`ValidatedEntry` cambia visualmente a color verde y muestra el estado
-como válido.
+En esta evidencia se introduce un correo electrónico con formato correcto.
 
-Ejemplo:
+El componente `ValidatedEntry` detecta que el valor es válido, cambia el campo a color verde y muestra:
 
-```text
-usuario@gmail.com
+**Estado: VÁLIDO**
+
+![Evidencia 2](evidencias/e2.png)
+
+---
+
+## Evidencia 3 - Python/Tkinter: correo inválido
+
+En esta prueba se introduce únicamente:
+
+`usuario`
+
+Como el texto no cumple con el formato de correo electrónico, el componente cambia el campo a color rojo y muestra:
+
+**Estado: INVÁLIDO**
+
+![Evidencia 3](evidencias/e3.png)
+
+---
+
+## Evidencia 4 - Python/Tkinter: ValidatedEntry y Slugifier
+
+Esta evidencia muestra el funcionamiento conjunto de los dos componentes desarrollados en Python.
+
+El componente visual valida correctamente:
+
+`usuario@gmail.com`
+
+Mientras que el componente no visual `Slugifier` transforma:
+
+`Hola Mundo`
+
+en:
+
+`hola-mundo`
+
+![Evidencia 4](evidencias/e4.png)
+
+---
+
+## Evidencia 5 - Java/JavaFX: validación independiente
+
+La versión desarrollada con JavaFX utiliza el componente visual personalizado `ValidatedTextField`.
+
+En esta evidencia el correo:
+
+`usuario@gmail.com`
+
+es reconocido como válido.
+
+El segundo campo permanece vacío y se marca visualmente como inválido, demostrando que cada instancia del componente puede tener su propia regla de validación.
+
+![Evidencia 5](evidencias/e5.png)
+
+---
+
+## Evidencia 6 - Java/JavaFX: ValidatedTextField y Slugifier
+
+Esta evidencia muestra el funcionamiento completo de la aplicación JavaFX.
+
+El componente visual `ValidatedTextField` valida correctamente el correo:
+
+`usuario@gmail.com`
+
+Además, el componente no visual `Slugifier` convierte:
+
+`Hola Mundo desde Java`
+
+en:
+
+`hola-mundo-desde-java`
+
+![Evidencia 6](evidencias/e6.png)
+
+---
+
+## Pruebas unitarias
+
+El componente no visual `Slugifier` desarrollado en Python también fue comprobado mediante pruebas unitarias con `unittest`.
+
+Se realizaron cinco pruebas para verificar:
+
+- Conversión normal de texto.
+- Eliminación de acentos.
+- Eliminación de símbolos.
+- Manejo de espacios múltiples.
+- Eliminación de guiones repetidos.
+
+El resultado obtenido fue:
+
+`Ran 5 tests`
+
+`OK`
+
+Esto confirma que el componente `Slugifier` funciona correctamente en los casos probados.
