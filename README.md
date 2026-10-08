@@ -445,21 +445,18 @@ reutilizado desde otros proyectos.
 
 # Evidencias de funcionamiento
 
-A continuación se muestran las pruebas de funcionamiento de los componentes
-reutilizables desarrollados en Python/Tkinter y Java/JavaFX.
+A continuación se presentan evidencias del funcionamiento de los
+componentes reutilizables desarrollados tanto en Python/Tkinter como
+en Java/JavaFX.
 
 ---
 
 ## Evidencias de Python / Tkinter
 
-### Validación de correo electrónico
+### 1. Estado inicial de la aplicación
 
-El componente `ValidatedEntry` cambia su estado visual dependiendo de si
-el contenido ingresado cumple con el patrón establecido.
-
-#### Campo vacío
-
-El campo permanece sin contenido y el estado se muestra como inválido.
+La aplicación inicia con el campo de correo electrónico vacío y con
+el estado marcado como inválido.
 
 <p align="center">
   <img src="evidencias/e1.png" width="650">
@@ -467,33 +464,13 @@ El campo permanece sin contenido y el estado se muestra como inválido.
 
 ---
 
-#### Correo electrónico válido
+### 2. Validación de correo correcto
 
-Cuando se introduce una dirección de correo correcta, el componente cambia
-a color verde y muestra el estado como válido.
+Al introducir un correo electrónico con un formato válido, el componente
+`ValidatedEntry` cambia visualmente a color verde y muestra el estado
+como válido.
 
-<p align="center">
-  <img src="evidencias/e2.png" width="650">
-</p>
-
----
-
-#### Correo electrónico inválido
-
-Cuando el texto no cumple con el formato de correo electrónico, el campo
-cambia a color rojo y el estado se muestra como inválido.
-
-<p align="center">
-  <img src="evidencias/e3.png" width="650">
-</p>
-
----
-
-### Uso conjunto de ValidatedEntry y Slugifier
-
-En esta evidencia se utilizan los dos componentes desarrollados.
-
-El correo:
+Ejemplo:
 
 ```text
 usuario@gmail.com
