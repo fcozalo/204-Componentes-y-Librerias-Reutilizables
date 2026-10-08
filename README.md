@@ -101,7 +101,7 @@ que puede instalarse localmente mediante `pip`.
 El componente visual desarrollado consiste en un campo de texto capaz de
 validar automáticamente el contenido introducido por el usuario.
 
-En la demostración se utiliza para validar una dirección de correo
+En la demostración que se utiliza para validar una dirección de correo
 electrónico.
 
 Ejemplo de correo válido:
